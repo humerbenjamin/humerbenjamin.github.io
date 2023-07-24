@@ -1,24 +1,24 @@
-vCard - Personal Portfolio
+Benjamin Humer - Personal Portfolio
 
 # sidebar
 
-alt = Richard hanrick
-Richard hanrick
-Web developer
+alt = Benjamin Humer
+Benjamin Humer
+Engineering Physics
 
 Show Contacts
 
 Email
-richard@example.com
+benjamin.humer@mail.utoronto.ca
 
 Phone
-+1 (213) 352-2795
++1 (778) 987-7056
 
 Birthday
-June 23, 1982
+May 25, 2002
 
 Location
-Sacramento, California, USA
+Vancouver, British Columbia, Canada
 
 # navbar
 
@@ -27,6 +27,7 @@ Resume
 Portfolio
 Blog
 Contact
+Test
 
 # about
 

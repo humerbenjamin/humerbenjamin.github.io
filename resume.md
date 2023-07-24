@@ -4,7 +4,8 @@ author_profile: true
 classes: wide
 ---
 
-# Resume
+Resume
+--------------------------------
 
 # Education
 ## BASc in Engineering Science (September 2020 - Present)
@@ -29,7 +30,7 @@ University of Toronto Dept. of Physics - SuperCDMS Collaboration (Toronto, ON.)
 * Implementation of continuous integration testing for sample data sets in CDMSBats, for verifying the outputs of new releases
 
 ## Summer Research Assistant: ESROP Fellowship
-University of Toronto Division of Engineering Science
+University of Toronto Division of Engineering Science (Toronto, ON.)
 * Building test cases to validate the new software package for the SuperCDMS Project in C, C++, and Python
 * Working online in a team research setting with collaboration across North America
 

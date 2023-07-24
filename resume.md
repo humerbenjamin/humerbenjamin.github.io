@@ -1,8 +1,7 @@
 ---
 layout: archive
 author_profile: true
-toc: true
-toc_label: "Resume Headings"
+classes: wide
 ---
 
 # Resume

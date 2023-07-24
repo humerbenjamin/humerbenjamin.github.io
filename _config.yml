@@ -104,11 +104,11 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
-  email            :
+  name             : "Benjamin Humer"
+  avatar           : "/assets/images/bio-photo.jpg"
+  bio              : "Engineer"
+  location         : "Vancouver, British Columbia"
+  email            : "benjamin.humer@mail.utoronto.ca"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"

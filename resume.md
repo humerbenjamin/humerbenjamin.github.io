@@ -4,7 +4,7 @@ author_profile: true
 classes: wide
 ---
 
-Resume
+
 --------------------------------
 
 # Education

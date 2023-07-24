@@ -1,5 +1,7 @@
 # main links
 main:
+  - title: "Resume"
+    url: https://humerbenjamin.github.io/resume/
   - title: "Quick-Start Guide"
     url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "About"

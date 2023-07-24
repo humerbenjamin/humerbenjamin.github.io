@@ -17,3 +17,5 @@ BASc in Engineering Science (September 2020 - Present)
 ## University of British Columbia (Vancouver, B.C.)
 Data Analyst and Engineer: Ocean Dynamics Lab (May 2023 - Present)
 * Worked as an engineer developing systems to help measure turbulent dynamics on a saltwater freshwater interface
+* Integration of new electronics systems into existing drifter technology, seen on the [drifters website](https://drifters.eoas.ubc.ca/)
+

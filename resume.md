@@ -5,17 +5,19 @@ title: "Resume"
 classes: wide
 ---
 
-
 --------------------------------
 
 # Education
+
 ## BASc in Engineering Science (September 2020 - Present)
 University of Toronto (Toronto, ON.)
 * Specialist in Engineering Physics
 * Minor in Sustainable Energy
 * Certificate in Nuclear Engineering
 
+
 # Experience
+
 ## Data Analyst and Engineer: Ocean Dynamics Lab (May 2023 - Present)
 University of British Columbia Dept. of Earth, Ocean, and Atmospheric Science (Vancouver, B.C.)
 * Worked as an engineer developing systems to help measure turbulent dynamics on a saltwater freshwater interface

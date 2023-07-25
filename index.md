@@ -1,8 +1,9 @@
 ---
-layout: home
+layout: single
 author_profile: true
 header:
     overlay_image: /assets/images/ridge.jpg
+classes: wide
 ---
 
 # About Me

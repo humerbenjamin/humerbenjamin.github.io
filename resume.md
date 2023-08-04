@@ -2,7 +2,9 @@
 layout: archive
 author_profile: true
 title: "Resume"
-classes: wide
+toc: true
+toc_label: "My Table of Contents"
+toc_icon: "cog"
 ---
 
 --------------------------------
@@ -16,7 +18,7 @@ University of Toronto (Toronto, ON.)
 * Certificate in Nuclear Engineering
 
 
-# Experience
+# Work Experience
 
 ## Data Analyst and Engineer: Ocean Dynamics Lab (May 2023 - Present)
 University of British Columbia Dept. of Earth, Ocean, and Atmospheric Science (Vancouver, B.C.)
@@ -37,4 +39,28 @@ University of Toronto Division of Engineering Science (Toronto, ON.)
 * Building test cases to validate the new software package for the SuperCDMS Project in C, C++, and Python
 * Working online in a team research setting with collaboration across North America
 
+# Programming and Technical Skills
 
+## Programming Languages
+C, C++, Python, Matlab, HTML
+
+## Other Software
+Git, Docker, Linux, Fusion360, Solidworks, AutoCAD
+
+# Extracurricular Activity
+
+## University of Toronto Rowing Team
+Varsity Blues Rowing (Toronto, ON.)
+* 
+* 2022 University of Toronto Men's Rookie of the Year
+* 2021 University of Toronto Men's Novice of the Year
+
+## Argonaut Rowing Club Senior Summer Rowing Team
+Argonaut Rowing Club (Toronto, ON.)
+* Raced in events throughout the summer like Row Ontario Championships and Royal Canadian Henley
+* Medals won in U23 pair at regional and provincial summer championships
+
+## Sailboat Racing
+Royal Victoria Yacht Club, Hollyburn Sailing Club (Victoria and Vancouver, B.C.)
+* Sailed in international events primarily on the west coast, as well as Youth Nationals throughout high school
+* Racing primarily in the Laser with a couple events in the 29er

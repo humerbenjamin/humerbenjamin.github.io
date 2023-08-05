@@ -2,9 +2,7 @@
 layout: archive
 author_profile: true
 title: "Resume"
-toc: true
-toc_label: "My Table of Contents"
-toc_icon: "cog"
+classes: wide
 ---
 
 --------------------------------
@@ -51,7 +49,7 @@ Git, Docker, Linux, Fusion360, Solidworks, AutoCAD
 
 ## University of Toronto Rowing Team
 Varsity Blues Rowing (Toronto, ON.)
-* 
+* Rowed the Men's 2- and Men's 8+ at the 2022 Canadian University Rowing Championships
 * 2022 University of Toronto Men's Rookie of the Year
 * 2021 University of Toronto Men's Novice of the Year
 

@@ -6,20 +6,26 @@ excerpt: "Bacon ipsum dolor sit amet salami ham hock ham, hamburger corned beef 
 
 
 intro: 
+  - excerpt: '# Introduction'
   - excerpt: 'I have always enjoyed tackling longer projects, whether they are [**Summer Research Projects**](https://humerbenjamin.github.io/projects/#summer-research-projects), 
   [**Personal Projects**](https://humerbenjamin.github.io/projects/#personal-projects), or [**School Projects**](https://humerbenjamin.github.io/projects/#school-projects).'
 
 
-thesis_content:
+undergrad_thesis_desc:
+  - excerpt: '# Undergraduate Thesis'
+  - excerpt: 'In the Physics Option of Engineeirng Science at the University of Toronto, all students complete a 4 or 8 month thesis project with a
+  supervisor of their choice. I chose to do an 8 month thesis project so that I could have more time to dive into a more complex thesis project.'
+
+
+undergrad_thesis_content:
   - image_path: assets/images/hovercraft.jpg
     alt: "hovercraft image"
-    title: "Thesis"
-    excerpt: "text"
-    url: "projects/UBC_ODL"
+    title: "Undergraduate Thesis"
+    excerpt: "Written about the use of Direct Simulation Monte Carlo methods to predict nonequilibrium 
+    gas filling and ionization in a small chamber"
+    url: "projects/undergrad_thesis"
     btn_label: "Read More"
     btn_class: "btn--primary"
-
-  - excerpt: "test body text"
 
 summer_research_desc:
   - excerpt: "# Summer Research Projects"
@@ -111,7 +117,7 @@ school_content:
   - image_path: /assets/images/unsplash-gallery-image-2-th.jpg
     alt: "capstone image"
     title: "Capstone Design"
-    excerpt: "information about capstone design"
+    excerpt: "Every year, students are grouped by their specific specialty in Engineering science, and undertake a design project."
     url: "projects/capstone"
     btn_label: "Read More"
     btn_class: "btn--primary"
@@ -139,7 +145,9 @@ feature_row4:
 
 {% include feature_row id="intro" type="center" %}
 
-{% include feature_row id="thesis_content" type="center" %}
+{% include feature_row id="undergrad_thesis_desc" type="center" %}
+
+{% include feature_row id="undergrad_thesis_content" type="center" %}
 
 {% include feature_row id="summer_research_desc" type="center" %}
 

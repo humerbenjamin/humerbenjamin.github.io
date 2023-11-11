@@ -46,9 +46,9 @@ General Fusion is looking to develop technology that can produce large amounts o
 
 # References
 
-[1] Bringing Fusion Energy To Market. Sept. 2023. url: https://generalfusion.com/.
-[2] Clinton Groth. url: https://arrow.utias.utoronto.ca/~groth/.
-[3] Kelly Epp et al. “Confinement Physics on Plasma Injector 3”. In: APS Division of Plasma Physics Meeting Abstracts. Vol. 2020. APS Meeting Abstracts. Jan. 2020, ZP07.011, ZP07.011.
-[4] John Marshall. “Performance of a Hydromagnetic Plasma Gun”. In: Physics of Fluids 3.1 (Jan. 1960), pp. 134–135. doi: 10.1063/1.1705989.
-[5] G A Bird. “Monte Carlo simulation of gas flows”. In: Annual Review of Fluid Mechanics 10.1 (1978), pp. 11–31. doi: 10.1146/annurev.fl.10.010178.000303.
-[6] I. D. Boyd, D. R. Beattie, and M. A. Cappelli. “Numerical and experimental investigations of lowdensity supersonic jets of hydrogen”. In: Journal of Fluid Mechanics 280 (1994), pp. 41–67. doi: 10.1017/s0022112094002843.
+[1] Bringing Fusion Energy To Market. Sept. 2023. url: https://generalfusion.com/.  
+[2] Clinton Groth. url: https://arrow.utias.utoronto.ca/~groth/.  
+[3] Kelly Epp et al. “Confinement Physics on Plasma Injector 3”. In: APS Division of Plasma Physics Meeting Abstracts. Vol. 2020. APS Meeting Abstracts. Jan. 2020, ZP07.011, ZP07.011.  
+[4] John Marshall. “Performance of a Hydromagnetic Plasma Gun”. In: Physics of Fluids 3.1 (Jan. 1960), pp. 134–135. doi: 10.1063/1.1705989.  
+[5] G A Bird. “Monte Carlo simulation of gas flows”. In: Annual Review of Fluid Mechanics 10.1 (1978), pp. 11–31. doi: 10.1146/annurev.fl.10.010178.000303.  
+[6] I. D. Boyd, D. R. Beattie, and M. A. Cappelli. “Numerical and experimental investigations of lowdensity supersonic jets of hydrogen”. In: Journal of Fluid Mechanics 280 (1994), pp. 41–67. doi: 10.1017/s0022112094002843.  

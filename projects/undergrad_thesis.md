@@ -14,7 +14,7 @@ Physics Simulation, Computational Fluid Dynamics, Individual Particle Simulation
 
 # Summary
 
-** Thesis abstract goes here **
+**Thesis abstract goes here**
 
 # Thesis Topic Information
 

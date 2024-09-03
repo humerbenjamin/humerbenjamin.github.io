@@ -18,7 +18,12 @@ University of Toronto (Toronto, ON.)
 
 # Work Experience
 
-## Data Analyst and Engineer: Ocean Dynamics Lab (May 2023 - Present)
+## Experimental Plasma Physics Data Analyst: General Fusion (May 2024 - September 2025)
+General Fusion Inc. (Vancouver, B.C.)
+* Ran simulations in OpenFOAM for the LM26 prototype reactor
+* Worked on data analysis for the PI-3 Plasma Injector
+
+## Data Analyst and Engineer: Ocean Dynamics Lab (May 2023 - September 2023)
 University of British Columbia Dept. of Earth, Ocean, and Atmospheric Science (Vancouver, B.C.)
 * Worked as an engineer developing systems to help measure turbulent dynamics on a saltwater freshwater interface
 * Integration of new electronics systems into existing drifter technology, seen on the [drifters website](https://drifters.eoas.ubc.ca/)
@@ -49,7 +54,7 @@ Git, Docker, Linux, Fusion360, Solidworks, AutoCAD
 
 ## University of Toronto Rowing Team
 Varsity Blues Rowing (Toronto, ON.)
-* Rowed the Men's 2- and Men's 8+ at the 2022 Canadian University Rowing Championships
+* 2023 University of Toronto Men's Oarsman of the Year
 * 2022 University of Toronto Men's Rookie of the Year
 * 2021 University of Toronto Men's Novice of the Year
 

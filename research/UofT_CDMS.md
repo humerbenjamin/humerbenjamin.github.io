@@ -18,3 +18,4 @@ In Summer 2021, I recieved an Engineering Science Research Opportunity (ESROP) g
 
 # Background about SuperCDMS
 
+There is extensive background about the SuperCDMS experiment available from both SNOLab ([here](https://www.snolab.ca/experiment/supercdms/)) and SLAC ([here](https://supercdms.slac.stanford.edu/)).

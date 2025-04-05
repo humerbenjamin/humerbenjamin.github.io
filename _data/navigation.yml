@@ -2,12 +2,14 @@
 main:
   - title: "Resume"
     url: https://humerbenjamin.github.io/resume/
+  - title: "Fusion"
+    url: https://humerbenjamin.github.io/fusion/
+  - title: "Research"
+    url: https://humerbenjamin.github.io/research/
   - title: "Projects"
     url: https://humerbenjamin.github.io/projects/
-  - title: "Career History"
-    url: https://humerbenjamin.github.io/career_history/
-  # - title: "Quick-Start Guide"
-  #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+
+
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"

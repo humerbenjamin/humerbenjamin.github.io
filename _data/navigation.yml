@@ -1,5 +1,7 @@
 # main links
 main:
+  - title: "Home"
+    url: https://humerbenjamin.github.io/index/
   - title: "Resume"
     url: https://humerbenjamin.github.io/resume/
   - title: "Fusion"

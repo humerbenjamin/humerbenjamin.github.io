@@ -41,4 +41,6 @@ The main components of the setup are the large semi-circular spool, and the moto
 
 ### Cosmic Ray Detector
 
-![mathusla_cosmic](/assets/images/mathusla_cosimic_ray.png)
+<div style="text-align: center;">
+    <img src="/assets/images/mathusla_cosimic_ray.png" style="width: 80%;" alt="mathusla_cosmic">
+</div>

@@ -33,11 +33,17 @@ The setup that I built was primarily for testing WSFs. The important properties 
 
 These measurements utilized a laser shining on a WSF and two SIPMs on either end of the fiber to capture the signal from the light. For attenuation and delay to be accurately measured, the precise location of the light along the fiber needed to be measured, which was what the setup was built for. The setup is shown in the image below.
 
-![mathusla_fiber_spool](/assets/images/fibre_spool.PNG)
+
+<div style="text-align: center;">
+    <img src="/assets/images/fibre_spool.PNG" style="width: 55%;" alt="mathusla_cosmic">
+</div>
+
 
 The main components of the setup are the large semi-circular spool, and the motor and electronics housing. The motor and electronics housing are on the right, and control the precise location of the fiber down to the nearest $10^{-4}m$ by turning two motors that go in the small cutout on the right of the electronics housing module. There is another similar semi-circular setup on the far side of the dark box that the testing setup was contained within, and the fiber spools between these two semi-circles while the end is slowly fed through the slot on the right of the image by the motors. Connected on the two posts you can see in the image was a housing for the fiber optic cable that aligned it with the WSL.
 
-![mathusla_testing_setup](/assets/images/mathusla_setup_picture.jpg)
+<div style="text-align: center;">
+    <img src="/assets/images/mathusla_setup_picture.jpg" style="width: 70%;" alt="mathusla_cosmic">
+</div>
 
 ### Cosmic Ray Detector
 

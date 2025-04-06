@@ -22,7 +22,7 @@ subtitle                 : # site tagline that appears below site title in masth
 name                     : "Benjamin Humer"
 description              : "An amazing website."
 url                      : # https://github.com/humerbenjamin # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : # /humerbenjamin.github.io
+baseurl                  : /humerbenjamin.github.io
 repository               : # humerben/humerbenjamin.github.io
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
@@ -106,7 +106,7 @@ analytics:
 author:
   name             : "Benjamin Humer"
   avatar           : "/assets/images/bio_photo.jpg"
-  bio              : "Engineer"
+  bio              : "Engineering Physicist"
   location         : "Vancouver, British Columbia"
   # email            : "benjamin.humer@mail.utoronto.ca"
   links:

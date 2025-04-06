@@ -12,7 +12,7 @@ classes: wide
 
 # Specific Skills Used
 
-Programming, Numerical Modeling, Data Analysis, Hardware Testing
+Programming (python, matlab, ), Data Analysis, Hardware Testing, Oceanography
 
 # Summary
 
@@ -24,9 +24,17 @@ With my limited oceanography experience, my personal contribution over the summe
 
 ### Oceanography
 
-The work done in the ODL revolves around going out onto the ocean to measure water properties and deploy drifters.
+The work done in the ODL revolves around going out onto the ocean to measure water properties and deploy drifters. The deployment of drifters was my primary role throughout the summer, so that was the focus of my personal on water time as well. A line of floating drifters is shown below.
 
+<div style="text-align: center;">
+    <img src="/assets/images/drifters_floating.png" style="width: 60%;" alt="drifters_software">
+</div>
 
+Along with being responsible for the deployment and retrieval of drifters on these trips, I also helped with taking other oceanographic measurements while we were out on the water. The image below shows me on the front of the hovercraft communicating with the winch operator as we lower a probe down to take temperature, salinity, and debris measurements as a function of depth.
+
+<div style="text-align: center;">
+    <img src="/assets/images/hovercraft_me.png" style="width: 60%;" alt="hovercraft_data">
+</div>
 
 
 ### Drifter's Website Backend
@@ -40,4 +48,10 @@ Since a new tracker from a new service was being integrated, it was no longer co
 
 ### Tracki Hardware Testing
 
-The reason 
+The reason why the [TRACKI](https://tracki.com/?ref=jccwommy&gad_source=1&gclid=CjwKCAjwzMi_BhACEiwAX4YZULb2_n0TUZEKCh784JDrqIemDywiQGmK3wG9k1UIhvy_2SQoyu8trRoCJ7wQAvD_BwE) GPS units were integrated into the drifters system was to investigate the plume front where the Fraser River mixes with the Salish Sea. This is possible since the drifters with TRACKI units on them provide higher frequency updates about their GPS position which allows us to better resolve the dynamics on the plume front. An image of the hovercraft on the plume front where drifters were deployed is shown below.
+
+<div style="text-align: center;">
+    <img src="/assets/images/hovercraft_on_tidal_edge.png" style="width: 70%;" alt="plume_front_hovercraft">
+</div>
+
+This new GPS system required extensive testing to validate its effectiveness, and the flaws in the hardware ended up requiring that the data be extensively filtered to remove unwanted data points. This process took up about half of my time throughout the summer; but once the system was working properly, we were able to observe that there were convergence events on the plume front which was a novel observation for this river sea boundary.

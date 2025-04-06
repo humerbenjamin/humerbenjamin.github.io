@@ -18,7 +18,7 @@ In Summer 2022, I continued to work under the supervision of Miriam Diamond (as 
 
 # MATHUSLA Background Information
 
-MATHUSLA is a proposed detector at CERN which 
+MATHUSLA (Massive Timing Hodoscope for Ultra Stable neutraL pArticles) is a proposed detector at CERN which has been designed to detect long-lived particles (LLPs). Current searches at ATLAS and CMS are an important component of the search for neutral, weakly coupled, long lived particles that eventually decay to SM particles, but these detectors do not have sensitivity for softer signals. MATHUSLA is a simple large scale detector that would be able to detect these SM byproducts.
 
 There is additional background about the MATHUSLA experiment available from [CERN](https://mathusla-experiment.web.cern.ch/).
 
@@ -45,7 +45,10 @@ The main components of the setup are the large semi-circular spool, and the moto
     <img src="/assets/images/mathusla_setup_picture.jpg" style="width: 70%;" alt="mathusla_cosmic">
 </div>
 
+
 ### Cosmic Ray Detector
+
+The secondary purpose of the MATHUSLA detector is as a cosmiuc ray array. This provides tremendous safety for the project because if no LLPs are detected, the detector will still have utility for the study of cosmic rays. I built a setup in our secondary dark box to confirm that the conceptual design would make for an effective detector. I ran a weeklong trial and detected cosmic rays at the rate that would be predicted given the area of the detector and the fact that it was inside a building.
 
 <div style="text-align: center;">
     <img src="/assets/images/mathusla_cosimic_ray.png" style="width: 80%;" alt="mathusla_cosmic">

@@ -3,6 +3,7 @@ layout: single
 author_profile: true
 header:
     overlay_image: /assets/images/ridge.jpg
+    title: ""
 classes: wide
 ---
 

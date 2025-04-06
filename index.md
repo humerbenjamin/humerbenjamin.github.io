@@ -9,11 +9,10 @@ classes: wide
 # Table of Contents
 - [About Me](#about-me)
 - [Summary of Website Sections](#summary-of-website-sections)
-    - [Resume](#resume)
+    - [CV](#cv)
     - [Fusion](#fusion)
     - [Research](#research)
     - [Projects](#projects)
-
 
 
 # About Me
@@ -22,7 +21,7 @@ Welcome to my website! My name is Benjamin Humer, and I am an [Engineering Scien
 
 My primary interests are Fusion Energy and high performance computing, and I am hoping to pursue a PhD that allows me to explore the interface of these two topics. At General Fusion I have had the opportunity to explore plasma phenomena in General Fusion's Plasma Injector 3 experiment, as well as work on resistive MHD simulations on their high performance computing cluster. This has only made me more excited to explore plasma phenomena in the rest of my education as well as my career beyond that whether it is in academia or industry.
 
-One of the most important aspects of my undergraduate experience at UofT was my time competing on the Varsity Blues Rowing team. The lessons that I have learned from participating in high level sport throughout my life have shaped how I approach working in a team setting. Sport has have continuously learned about how a team can become much more than the sum of its parts, and this is a mentality that I bring to all my work. I have also been recognized for my leadership and work ethic in all three seasons of Rowing at the University of Toronto; where I was Novice, Rookie, and Oarsman of the year in 2021, 2022, and 2023 respectively. These awards are not only a result of my achievements within the sport itself, but a result of the way I interact with my teammates and how I use my work ethic to lead by example; these are the values I hope to continue to bring to teams that I am a part of academically and profesisonally.
+One of the most important aspects of my undergraduate experience at UofT was my time competing on the [Varsity Blues Rowing team](https://varsityblues.ca/sports/rowing). The lessons that I have learned from participating in high level sport throughout my life have shaped how I approach working in a team setting. Sport has have continuously learned about how a team can become much more than the sum of its parts, and this is a mentality that I bring to all my work. I have also been recognized for my leadership and work ethic in all three seasons of Rowing at the University of Toronto; where I was Novice, Rookie, and Oarsman of the year in 2021, 2022, and 2023 respectively. These awards are not only a result of my achievements within the sport itself, but a result of the way I interact with my teammates and how I use my work ethic to lead by example; these are the values I hope to continue to bring to teams that I am a part of academically and profesisonally.
 
 
 # Summary of Website Sections

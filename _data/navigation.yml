@@ -2,12 +2,12 @@
 main:
   - title: "Home"
     url: https://humerbenjamin.github.io/
-  - title: "Resume"
-    url: https://humerbenjamin.github.io/resume/
+  - title: "CV"
+    url: https://humerbenjamin.github.io/cv/
   - title: "Fusion"
     url: https://humerbenjamin.github.io/fusion/
   - title: "Research"
-    url: https://humerbenjamin.github.io/research/
+    url: /research/
   - title: "Projects"
     url: https://humerbenjamin.github.io/projects/
 

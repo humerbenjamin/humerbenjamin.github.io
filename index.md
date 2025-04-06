@@ -29,7 +29,7 @@ One of the most important aspects of my undergraduate experience at UofT was my 
 
 The following list highlights the main sections of this website and what is contained on the pages.
 
-## [CV](https://humerbenjamin.github.io/resume/)
+## [CV](https://humerbenjamin.github.io/cv/)
 
 This page includes an extended CV as well as a download link for a PDF version of my CV.
 

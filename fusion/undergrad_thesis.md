@@ -8,6 +8,12 @@ classes: wide
 
 --------------------------------
 
+# Links
+
+[**Thesis Document Download Link**](C:\Users\Ben\Desktop\Personal_Projects\personal_site\humerbenjamin.github.io\fusion\undergrad_thesis_document.pdf)
+
+
+
 # Specific Skills Used
 
 Physics Simulation, Computational Fluid Dynamics, Individual Particle Simulation, High Performance Computing, and Scientific Communication

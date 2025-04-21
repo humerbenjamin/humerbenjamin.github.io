@@ -12,9 +12,9 @@ classes: wide
 
 <a href="/fusion/undergrad_thesis_document.pdf" target="_blank">View Undergraduate Thesis Document</a>
 
-[DSMC Literature Review](/fusion/dsmc_lit_review.md)
+[DSMC Literature Review](/fusion/dsmc_lit_review)
 
-[PIC Literature Review](/fusion/pic_lit_review.md)
+[PIC Literature Review](/fusion/pic_lit_review)
 
 # Specific Skills Used
 

@@ -10,7 +10,11 @@ classes: wide
 
 # Links
 
-<a href="/fusion/undergrad_thesis_document.pdf" target="_blank">View Undergraduate Thesis</a>
+<a href="/fusion/undergrad_thesis_document.pdf" target="_blank">View Undergraduate Thesis Document</a>
+
+[DSMC Literature Review](/fusion/dsmc_lit_review.md)
+
+[PIC Literature Review](/fusion/pic_lit_review.md)
 
 # Specific Skills Used
 
@@ -33,7 +37,26 @@ This undergraduate thesis investigates the neutral gas distribution over time du
 
 # Introduction
 
+## Project Description and Background
 
+This thesis project involves the use of Direct Simulation Monte Carlo (DSMC) methods to predict non-equilibrium gas filling in a small chamber, and then researching how this simulation could be extended to include ionization as well (see Chapter 2 for more information about General Fusion and their approach to fusion energy Generation). The project and problem definition were provided by General Fusion [1], but will be primarily supervised by Prof. Clinton Groth [2] from the University of Toronto Institute of Aerospace Studies (UTAIS) with assistance from Abetheran Antony who works in Applied Physics at General Fusion. General Fusion’s approach to fusion energy is a hybrid of Inertial and Magnetic Confinement where the plasma is formed in their Fusion Plasma Injector [3] (a form of Plasma Railgun similar to the one proposed by John Marshall [4]) and then fired into a central chamber to undergo fusion. This plasma injection process starts with gas flowing into an evacuated chamber from a number of different valves; then before equilibrium is reached, that gas is ionized with extremely high voltage and compressed using the Fusion Plasma Injector. The beginning stages of this process are what General Fusion is interested in learning more about through the work conducted in this thesis. Currently General Fusion assumes a distribution for the diffusion of gas in the chamber, and then models the ionization and plasma injection from that point, but this can be made more accurate with DSMC simulation of the initial gas diffusion.
+
+## Gap in Existing Research
+
+The proposed research gap is to properly understand the density distribution of neutral gas in the PI-3 Ionization chamber. Up to this point, the assumed distribution of the gases in the chamber was a Gaussian about each valve. General Fusion doesn’t have any existing simulations that they have used to determine the process of filling in the PI-3 ionization chamber, so any insight that can be gained from the DSMC simulations in this thesis will fill that gap in knowledge.
+
+## Central Research Objective
+
+The objective of this thesis work is to provide a more accurate description of the initial gas distribution at the time of ionization, as well as the distribution of ionized gas before compression.
+Since it is based on DSMC, this description will incorporate all the relevant particle interactions so
+that General Fusion can learn more about where the gas is when ionization occurs in their plasma
+injector [5] and where most of the ions are distributed within the chamber before compression.
+DSMC should be a great tool for tackling this problem provided the Knudsen Number (see Section
+3.1.1) and flow regime (see section 3.1.2) make it computationally viable. This is because DSMC
+simulates the fundamental physical interactions and is great for problems like this without known
+solutions.
+
+## 
 
 
 # Theory

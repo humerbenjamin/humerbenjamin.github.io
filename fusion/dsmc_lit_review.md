@@ -100,15 +100,103 @@ The way DSMC differs from other molecular dynamics simulations is by not simulat
 
 ## Why Do Molecules Need to Stay in Their Cells for Multiple Time Steps
 
-The fourth assumption (from the section on the [Key Assumptions of DSMC](#key-assumptions-of-dsmc)) does not appear in [15], but it is important for the specific case of a transient gas filling simulation, which is the core problem of this thesis. In a gas filling process from an inlet, as gas fills the chamber there will be a bias to the faster end of the velocity distribution (shown in Figure 3). This is due to the initial condition of the density, which is a step function where there is a high density area of gas that fills into a near vacuum (a snapshot of the density in a square chamber partway through the filling process is shown in Figure 3.3). The total flux through the inflow surface is described by Equation 3.3, where n is the number density of the gas in [molecules/m3], and cgas is the average velocity of the gas inflow in [m/s]. The equation for cgas can be derived from the Boltzmann Distribution, and it is shown in Equation 3.4.
+The fourth assumption (from the section on the [Key Assumptions of DSMC](#key-assumptions-of-dsmc)) does not appear in [15], but it is important for the specific case of a transient gas filling simulation, which is the core problem of this thesis. In a gas filling process from an inlet, as gas fills the chamber there will be a bias to the faster end of the velocity distribution (shown in Figure 3).
 
 <div style="text-align: center;">
     <img src="/assets/images/undergraduate_thesis/mb_speed_parametrized.png" style="width:70%;" alt="mb_speed_parametrized">
     <figcaption>Figure 3: Plot of a Maxwell Boltzmann Distribution at $T = 300K$, parameterized on molecular velocity with the high energy section of the distribution highlighted.</figcaption>
 </div>
 
+This is d ue to the initial condition of the density, which is a step function where there is a high density area of gas that fills into a near vacuum (a snapshot of the density in a square chamber partway through the filling process is shown in Figure 4). The total flux through the inflow surface is described by 
+
+$$
+\Gamma=\frac{1}{4}nc_{gas} \; . \quad (3)
+$$
+
+In Equation (3), $n$ is the number density of the gas in $[molecules/m3]$, and $c_{gas}$ is the average velocity of the gas inflow in $[m/s]$. The equation for cgas can be derived from the Boltzmann Distribution, and it is
+
+$$
+c_{gas}=\left( \frac{8kT}{m\pi}\right)^\frac{1}{2} \;. \quad (4)
+$$
+
+<div style="text-align: center;">
+    <img src="/assets/images/undergraduate_thesis/plot6_low-p-slit.png" style="width:70%;" alt="low_p_slit">
+    <figcaption>Figure 4: Cube with inflow patch in a slit on the center of the $z = 0$ plane partway through a filling simulation.</figcaption>
+</div>
+
+This is important for filling, because the particles at the high velocity end of the Maxwell Boltzmann Distribution naturally form the leading edge of the gas (the leading edge of the gas is very visible in Figure 4 as the lightest part of the flow expanding outwards) from a density step function initial condition, so the gas is not thermalized; and as a result the distribution of energies in each cell will be different. This means the particles must not cross through multiple cells in one time step, otherwise the energy transfer between particles will not be representative of true physical phenomena. If particles pass through multiple cells over the course of one time step, then they do not properly represent the collisional probabilities in the cells they pass through along their path, just the cell they end up in at the end (see Figure 5).
+
+<div style="text-align: center;">
+    <img src="/assets/images/undergraduate_thesis/particle_moving_cells.png" style="width:70%;" alt="particle_moving_cells">
+    <figcaption>Figure 5: Diagram showing a particle moving from cell A to cell C of a grid in one time step, skipping over cell B.</figcaption>
+</div>
+
+In Figure 5, a particle moves along the entirety of $\vec{d}$ in one time step. This is not a problem if properties of cells A, B, and C (such as energy distribution of particles, vector velocities of particles, and the macroscopic number density) are the same, but for a transient problem, adjacent cells will have different properties across the simulation domain. This means if a particle doesn’t spend multiple time steps in each cell, it is not properly accounting for the different collision probabilities and energy transfer parameters from the different cells, leading to incorrect simulation of the underlying physics.
+
 
 ## The DSMC Algorithm
+
+In a DSMC program, the program runs in a loop from initial time ti to final time tf in N time steps of length $∆t$ specified by the equation
+
+$$
+\Delta t = \frac{t_f-t_i}{N} \;. \quad (5)
+$$
+
+At each time step, the following list of steps occur in the specified order.
+
+1. Generate particles at inflow boundaries (or through imposition of initial conditions at $t = 0$) [15].
+2. Move all particles in straight lines along their molecular velocity vectors for a time step less than the local mean collision time [15].
+3. Apply Boundary Conditions to particles where it is appropriate (wall collisions and particle deletions) [15].
+4. Perform stochastic collisions within each cell, assuming parameters for each collision pair to be random [15].
+5. Sample particle properties in each cell [15].
+
+#### Particle Generation
+
+At the beginning of each time step, particles are generated at any inflow patches. They are
+randomly assigned parameters, usually based on a modified Maxwell Boltzmann Distribution pa-
+rameterized based on Temperature, and often include the ability to manually bias the mean velocity by some $\vec{v}_{bias}$. The Maxwell Boltzmann distribution for 3-dimensional velocity is defined as
+
+$$
+f(\vec{v}) \equiv \left[ \frac{2\pi k T}{m} \right]^{-\frac{3}{2}} exp \left( -\frac{1}{2}\frac{m\vec{v}^2}{kT} \right) \; . \quad (6)
+$$
+
+The modified distribution mentioned in the previous paragraph takes the velocity $\vec{v}$ from Equation (6) and then adds it to $\vec{v}_{bias}$ to define a particle velocity
+
+$$
+\vec{v}_{particle} = \vec{v}+\vec{v}_{bias} \; . \quad (7)
+$$
+
+#### Particle Movement
+
+Particles created at the inflow patch were randomly assigned a position⃗x (ti) somewhere on the
+face of the inflow patch in the previous step; and particles that were already part of the simulation for the previous time step have positions $\vec{x}(ti)$ which were saved to represent the system state after the previous time step.
+
+At every time step, all particles (both created at the inflow patch and existing in the domain)
+are moved by a distance $d$ along $\vec{v}(t_i)$
+
+$$
+\vec{d}=\vec{v}(t_i)\cdot \Delta t \;. \quad (8)
+$$
+
+This moves each particle to a position $\vec{x}(t_f)$ which is defined by
+
+$$
+\vec{x}(t_f)=\vec{x}(t_i)+\vec{v}(t_i)\cdot \Delta t = \vec{x}(t_i) + \vec{d} \; . \quad (9)
+$$
+
+After this movement of particles, the set of positions $\vec{x}(tf)$ of the particles forms the positions $\vec{x}(ti)$ of the next time step. This means the position state of the system has been fully specified at this point.
+
+#### Boundary Conditions
+
+Now that particles have been moved to their final positions, boundary conditions need to be
+imposed on the particles that have left the domain. The main two boundary conditions that will be used throughout this thesis are wall boundary conditions and deletion boundary conditions. Particles that have left the domain and would have collided with the wall are brought back to the point of contact, and then collide with the wall in whichever way is specified by the boundary (see [16] for some examples). If a particle that has left the domain would have collided with a deletion patch, then the particle is removed from the state of the simulation so it is not a part of the simulation at the beginning of the next time step. Now only the particles that are actually entering the next time step of the simulation remain as a part of the saved state.
+
+#### Stochastic Collisions
+
+
+
+
+
 
 
 # Existing Open Source DSMC Packages

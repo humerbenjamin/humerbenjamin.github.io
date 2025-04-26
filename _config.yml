@@ -105,7 +105,7 @@ analytics:
 # Site Author
 author:
   name             : "Benjamin Humer"
-  avatar           : "/assets/images/bio_photo.jpg"
+  avatar           : "/assets/images/headshot.png"
   bio              : "Engineering Physicist"
   location         : "Vancouver, British Columbia"
   # email            : "benjamin.humer@mail.utoronto.ca"

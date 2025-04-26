@@ -63,14 +63,22 @@ solutions.
 
 ## DSMC Theory
 
+A brief overview of the theoretical background of DSMC and an outline of some available OpenSource DSMC codes is available on the [DSMC Literature Review](/fusion/dsmc_lit_review) page.
+
 
 ## PIC Theory
 
+A brief overview of the theoretical background of PIC and an outline of some available OpenSource PIC codes is available on the [PIC Literature Review](/fusion/pic_lit_review) page.
 
 
 
+# Neutral Gas Experimental Approach
 
+## Problem Definition
 
+## Preliminary Calculations and Verification
+
+# 
 
 
 # References

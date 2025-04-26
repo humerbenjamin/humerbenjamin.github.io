@@ -76,9 +76,42 @@ A brief overview of the theoretical background of PIC and an outline of some ava
 
 ## Problem Definition
 
+
 ## Preliminary Calculations and Verification
 
-# 
+### Flow Regime for Valve Exit and Unfilled Chamber
+
+### Flow Regime for Chamber after Filling
+
+### Table of Knudsen Numbers
+
+
+## Approaches
+
+### List of Potential Approaches
+
+### Moment Closure
+
+### Fokker-Planck Solver
+
+### Fokker-Planck and DSMC Hybrid Solver
+
+### Direct Simulation Monte Carlo
+
+### Direct Simulation Monte Carlo Navier Stokes Hybrid Solver
+
+
+## Test Cases
+
+### Defining Specific Test Cases
+
+### Verification Framework of DSMC Assumptions
+
+
+## Final Simulation
+
+
+# Neutral Gas Simulations
 
 
 # References

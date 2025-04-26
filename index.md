@@ -3,7 +3,7 @@ layout: single
 author_profile: true
 header:
     overlay_image: /assets/images/ridge.jpg
-    title: ""
+    title: Benjamin Humer Personal Portfolio
 classes: wide
 ---
 

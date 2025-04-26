@@ -23,6 +23,7 @@ classes: wide
     - [SPARTA](#sparta)
     - [Starfish](#starfish)
 - [Comparison of Existing Open Source DSMC Codes](#comparison-of-existing-open-source-dsmc-codes)
+- [References](#references)
 
 
 # Fluid Mechanics Background for Neutral Gases
@@ -74,14 +75,38 @@ From Figure 2 (see [14] for further detail), we can see that the continuum model
 flow are valid until the beginning of the transitional flow regime, but after that the end of the Burnett Hydrodynamics Equations, there is no closed set of equations that can describe the flow of a fluid. When considering molecular models however, there is no Knudsen Number range in which they do not provide accurate solutions. This is because they are simulating the fundamental physical interactions that govern macroscopic properties of interest in continuum simulations (see case 2 in the [Knudsen Numer](#knudsen-number) section for an example). This means that for a simulation that begins with part of the domain having a Knudsen Number of $Kn < 0.001$, and another part of the domain having a Knudsen Number of $Kn → ∞$, and a final Knudsen number of $Kn > 0.1$, then modelling the entire domain using a molecular model that accounts for collisions (such as a Boltzmann or DSMC model) is perfectly valid. The flow regimes for the specific gas filling process that General Fusion is interested in are analyzed on the main page relating to this [Undergradaute Thesis](/fusion/undergrad_thesis/#preliminary-calculations-and-verification).
 
 
-
 # Direct Simulation Monte Carlo (DSMC)
+
+Direct Simulation Monte Carlo (DSMC) is a method for simulating molecular dynamics in fluids
+of all Knudsen Number regimes, but is largely used for highly rarefied flows [15].
 
 ## Key Assumptions of DSMC
 
+The following four assumptions about the physical characteristics of the system are utilized in
+DSMC [15].
+
+1. Molecules move without interaction in free flight for the length of the chosen time step [15].
+2. Impact parameters and initial orientations of colliding particles are random [15].
+3. In every cubic mean free path there are many molecules, but only a small fraction need to be simulated for the molecular description of the flow to be accurate [15].
+4. The only molecules that any molecule could collide with are the molecules within a molecule’s finishing cell.
+
+For dilute gases, all four assumptions can be made so they are very accurate with the right parameters. This makes it so the DSMC method produces accurate simulations of macroscopic non- equilibrium flow fields. For dilute gases, there is always a time step which allows assumption 1 to be true regardless of Knudsen Number; Assumption 2 is true provided there is sufficient molecular spacing; assumption 3 is the true foundation of DSMC when compared to Collisional Boltzmann, and can be achieved using a number of different computational methods described later on in this section; and assumption 4 can always be made true with a sufficiently small time step just like assumption 1.
+
+From the four above assumptions, we can understand the basics of a DSMC program (there is a section describing [The DSMC ALgorithm](#the-dsmc-algorithm) in more detail). Just like in other molecular dynamics simulations, the state of the system is determined by a list of properties associated with each individual particle. In DSMC, these properties must include at least the position and velocity ($\vec{x}(t)$ and $\vec{v}(t)$)of each particle at any time step $t$ of the simulation, but additional quantities such as internal rotational energy of the particle ($E_{rot}(t)$) are also quite common to more accurately handle energy and momentum transfer in complex collisions.
+
 ## How DSMC Differs From Other Molecular Dynamics Simulations
 
+The way DSMC differs from other molecular dynamics simulations is by not simulating all the particles in a given domain, just a representative sample of the particles, which was alluded to in assumption 3 (from the section on the [Key Assumptions of DSMC](#key-assumptions-of-dsmc)). In any given time step ∆t where $∆t = tf −ti$, the particle moves from its specified position ($\vec{x}(t_i)$) to a final position by following its previous velocity trajectory ($\vec{x}(t_f)=\vec{x}(t_i) + \vec{v} (t_i) · ∆t$). Then based on the path length travelled over the time step ($d =\vec{v}(t_i)· ∆t$), a probability of collision is assigned to each particle, and collisions with other particles within their cells are simulated probabilistically regardless of whether their paths actually crossed. This is because if each cell has a representative set of particles, then a collision with any particle from the representative set at any random angle is the best approximation for modelling all the collisions with the highest degree of computational efficiency.
+
 ## Why Do Molecules Need to Stay in Their Cells for Multiple Time Steps
+
+The fourth assumption (from the section on the [Key Assumptions of DSMC](#key-assumptions-of-dsmc)) does not appear in [15], but it is important for the specific case of a transient gas filling simulation, which is the core problem of this thesis. In a gas filling process from an inlet, as gas fills the chamber there will be a bias to the faster end of the velocity distribution (shown in Figure 3). This is due to the initial condition of the density, which is a step function where there is a high density area of gas that fills into a near vacuum (a snapshot of the density in a square chamber partway through the filling process is shown in Figure 3.3). The total flux through the inflow surface is described by Equation 3.3, where n is the number density of the gas in [molecules/m3], and cgas is the average velocity of the gas inflow in [m/s]. The equation for cgas can be derived from the Boltzmann Distribution, and it is shown in Equation 3.4.
+
+<div style="text-align: center;">
+    <img src="/assets/images/undergraduate_thesis/mb_speed_parametrized.png" style="width:70%;" alt="mb_speed_parametrized">
+    <figcaption>Figure 2: Continuum mechanics simulation types classified based on the Knudsen Number regimes over which they provide accurate numerical results [14].</figcaption>
+</div>
+
 
 ## The DSMC Algorithm
 
@@ -100,3 +125,6 @@ flow are valid until the beginning of the transitional flow regime, but after th
 
 
 # Comparison of Existing Open Source DSMC Codes
+
+
+# References

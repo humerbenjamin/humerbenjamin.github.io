@@ -61,12 +61,14 @@ solutions.
 
 # Theory
 
-## DSMC Theory
+As the theory and background are a summarization of existing work, they will live on their own separate pages seperate from this main thesis page. Their links can be found below.
+
+### DSMC Theory
 
 A brief overview of the theoretical background of DSMC and an outline of some available OpenSource DSMC codes is available on the [DSMC Literature Review](/fusion/dsmc_lit_review) page.
 
 
-## PIC Theory
+### PIC Theory
 
 A brief overview of the theoretical background of PIC and an outline of some available OpenSource PIC codes is available on the [PIC Literature Review](/fusion/pic_lit_review) page.
 

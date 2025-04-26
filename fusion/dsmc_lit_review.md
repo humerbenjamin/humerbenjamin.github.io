@@ -193,26 +193,81 @@ imposed on the particles that have left the domain. The main two boundary condit
 
 #### Stochastic Collisions
 
+In a gas composed of hard sphere molecules of diameter d (twice the total atomic radius of each
+molecule), the probability that two molecules both located within a volume of gas $V$ (the volume of the cell in which both molecules are contained) collide is proportional to the total volume swept out by their interaction cross sections normalized by the volume of gas being considered [15]. This is shown by the equation
+
+$$
+P \propto \pi d^2 v_{rel} \Delta t / V \;. \quad(10)
+$$
+
+The concept of volume swept out by an interaction cross section [15] can be visualized in Figure 6.
+
+<div style="text-align: center;">
+    <img src="/assets/images/undergraduate_thesis/cross_section_volume_swept.png" style="width:70%;" alt="cross_section_volume_swept">
+    <figcaption>Figure 6: Diagram showing how the interaction cross section sweep over time can be represented by a volume element.</figcaption>
+</div>
+
+In Figure 6, the total volume swept out by the interaction cross sections of the two molecules is simplified to the case where one of the two molecules is at rest [15]. This is always able to be the case for any two molecules by choosing $\vec{v}_{particle} = \vec{v}_{rel}$ as the  velocity of one of the molecules, so then the other is always at rest in that reference frame. Then the interaction cross section forms the area that is traced along the path length of the moving molecule, forming a cylinder. This can be used to understand Equation (10).
 
 
+***CONTINUE HERE***
 
 
+In Equation (10), it is defined that two molecules both exist within a volume element $V$, then their total interaction volume is the volume of the interaction cylinder presented in the previous paragraph, so the ratio of these two areas is the interaction probability of any two real particles. However, in DSMC, each DSMC Particle represents a large number (Wp) of real particles which all have the same velocity and molecular properties as the DSMC particle [15]. This allows us to find the probability of a DSMC interaction by adding a factor of (Wp) to Equation 3.10.
 
 
 # Existing Open Source DSMC Packages
 
+This section outlines various modern DSMC packages that have been designed for creating numerical solutions to highly rarefied gas dynamics problems. They are listed in chronological order of first release, and the first line of each entry shows that release date, along with the most recent update, where present means that there are more features continually being added.
+
 ## Graeme Bird
+
+**1963-2013** [17]: [Graeme Bird Website](http://www.gab.com.au/)
+
+Graeme Bird proposed and developed the DSMC method, and continued to be at the forefront
+of the field until he retired in 2013 at the age of 88 [17]. His software is very user friendly, but I’ve found that the open source versions of his software are more designed for demonstrating innovations in DSMC (such as new collisional models) than solving different problems with existing tools. The trade off for these user friendly options is that the source code is unavailable, so new features cannot be added by users
 
 ## OpenFOAM
 
+**2009-present** [18]: [OpenFOAM Website](https://www.openfoam.com/)
+
+OpenFOAM is a free open source CFD software package developed by OpenCFD for use in many different areas of engineering and science [19]. Development began in 2004, but the DSMC package was first available in 2009. The biggest strength of OpenFOAM is strict coding practices and the dictionary and class structure for specifying program parameters. This (along with the source code being open source) allows for OpenFOAM users to add their own features.
+
 ## hyStrath
+
+**2014-present** [20]: [hyStrath Website](https://hystrath.github.io/)
+
+The GitHub repository [hyStrath](https://github.com/hystrath/hyStrath) is an OpenFOAM extension that features hypersonic and rarefied gas dynamics code [20]. The code is specifically designed for atmospheric re-entry analysis, but is suitable for all kinds of rarefied gas dynamics problems, and has a module called dsmcFoam+ which is an extension of OpenFOAM’s DSMC software. It is also built within the OpenFOAM framework and strictly adheres to OpenFOAM’s coding practices, so it is easy to expand their existing code base to add additional features.
 
 ## SPARTA
 
+**2014-present** [21]: [SPARTA Website](https://sparta.github.io/)
+
+SPARTA is an acronym for Stochastic PArallel Rarefied-gas Time-accurate Analyzer [21]. It is a parallel DSMC code for low density 2-D or 3-D gas simulations created at the Sandia National Laboratory in the United States [21]. The source code is available, but the coding practices aren’t standardized, and there is limited documentation.
+
 ## Starfish
+
+**2016-present** [22]: [Starfish Website](https://www.particleincell.com/starfish/)
+
+Starfish is a 2-D gas and plasma simulation code [22] developed by Particle In Cell Consulting(PIC-C). For modelling plasma, it uses the Electrostatic Particle in Cell method; and for modelling free molecular flow it can use several continuum solvers as well as DSMC. There are two versions. One is free and open source but contains limited features, and the other is only internally available within PIC-C, but can be requested in a compiled format.
 
 
 # Comparison of Existing Open Source DSMC Codes
+
+The DSMC codes were evaluated in a simple comparison matrix which is shown in Table 1. The results of this comparison matrix were evaluated holistically through a series of discussions with the supervisor of this thesis at General Fusion, Abetheran Antony. The evaluation was centred around what would be the best way for General Fusion to get as much information as possible out of the thesis while also prioritizing my learning and educational development. We decided on hyStrath because it has a great list of features and has been thoroughly verified in academic papers [23].
+
+
+**Table 1: Comparison matrix for evaluation of different Open Source DSMC codes.**
+| **Feature**                           | **Bird** | **OpenFOAM** | **hyStrath** | **SPARTA** | **Starfish** |
+|--------------------------------------|----------|--------------|--------------|------------|--------------|
+| 2-D                                  | Yes      | Yes          | Yes          | Yes        | Yes          |
+| 3-D                                  | Yes      | Yes          | Yes          | Yes        | No           |
+| Axisymmetric                         | Yes      | No           | Yes          | No         | Yes          |
+| Built in Ionization                  | No       | No           | No           | No         | Yes          |
+| Mesh Generation Utility              | No       | Yes          | Yes          | No         | No           |
+| Documentation /10                   | 10       | 7            | 6            | 4          | 7            |
+| Supporting Literature /10            | 10       | 7            | 7            | 6          | 5            |
+
 
 
 # References

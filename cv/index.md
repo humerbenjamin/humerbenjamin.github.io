@@ -1,11 +1,14 @@
 ---
 layout: archive
 author_profile: true
-title: "Resume"
+title: "CV"
 classes: wide
 ---
 
 --------------------------------
+
+# Table of Contents
+
 
 # Education
 

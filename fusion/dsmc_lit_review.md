@@ -272,15 +272,27 @@ The DSMC codes were evaluated in a simple comparison matrix which is shown in Ta
 
 
 **Table 1: Comparison matrix for evaluation of different Open Source DSMC codes.**
-| **Feature**                           | **Bird** | **OpenFOAM** | **hyStrath** | **SPARTA** | **Starfish** |
-|--------------------------------------|----------|--------------|--------------|------------|--------------|
-| 2-D                                  | Yes      | Yes          | Yes          | Yes        | Yes          |
-| 3-D                                  | Yes      | Yes          | Yes          | Yes        | No           |
-| Axisymmetric                         | Yes      | No           | Yes          | No         | Yes          |
-| Built in Ionization                  | No       | No           | No           | No         | Yes          |
-| Mesh Generation Utility              | No       | Yes          | Yes          | No         | No           |
-| Documentation /10                   | 10       | 7            | 6            | 4          | 7            |
-| Supporting Literature /10            | 10       | 7            | 7            | 6          | 5            |
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Bird</th>
+      <th>OpenFOAM</th>
+      <th>hyStrath</th>
+      <th>SPARTA</th>
+      <th>Starfish</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>2-D</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+    <tr><td>3-D</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td><td>No</td></tr>
+    <tr><td>Axisymmetric</td><td>Yes</td><td>No</td><td>Yes</td><td>No</td><td>Yes</td></tr>
+    <tr><td>Built in Ionization</td><td>No</td><td>No</td><td>No</td><td>No</td><td>Yes</td></tr>
+    <tr><td>Mesh Generation Utility</td><td>No</td><td>Yes</td><td>Yes</td><td>No</td><td>No</td></tr>
+    <tr><td>Documentation /10</td><td>10</td><td>7</td><td>6</td><td>4</td><td>7</td></tr>
+    <tr><td>Supporting Literature /10</td><td>10</td><td>7</td><td>7</td><td>6</td><td>5</td></tr>
+  </tbody>
+</table>
 
 
 # References

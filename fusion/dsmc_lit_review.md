@@ -39,7 +39,7 @@ $$
 Kn=\lambda/L \; . \quad (1)
 $$
 
-Where $λ$ is the molecular mean free path (see [10] for a basic definition) in the medium of interest, and $L$ is some representative physical length scale such as the gap length that a gas could travel through before collision with a solid surface. This can intuitively be understood as a metric for how collisional the medium will be by thinking about the edge cases of the values the Knudsen Number can take on, so from Equation (1) we take the following 2 cases.
+Where $λ$ is the molecular mean free path (see [1] for a basic definition) in the medium of interest, and $L$ is some representative physical length scale such as the gap length that a gas could travel through before collision with a solid surface. This can intuitively be understood as a metric for how collisional the medium will be by thinking about the edge cases of the values the Knudsen Number can take on, so from equation (1) we take the following 2 cases.
 
 1. $Kn → ∞$: then the mean free path is infinitely larger than the length scale, and molecular collisions have very little impact on the evolution of the system.
 
@@ -61,33 +61,33 @@ With the knowledge of Knudsen Number presented in the section about the [Knudsen
 
 <div style="text-align: center;">
     <img src="/assets/images/undergraduate_thesis/flow_regimes.png" style="width:80%;" alt="flow_regimes">
-    <figcaption>Figure 1: Flow regimes covered by present theory classified based on Knudsen Number [11].</figcaption>
+    <figcaption>Figure 1: Flow regimes covered by present theory classified based on Knudsen Number [2].</figcaption>
 </div>
 
-With an understanding of the 2 extreme cases presented in the section about the [Knudsen Number](#knudsen-number), understanding can be extended into the slip flow and transition regimes shown in Figure 1. In the molecular regime, the intuition formed in case 1 fully applies, and in the continuum regime, the intuition formed in case 2 fully applies. The continuum regime will not be discussed further, but more information is available in the following set of notes [12]. In the slip flow regime, the internal flow can be thought of as the same as in continuum flow, but on the edges there may be different phenomena based on the imposition of boundary conditions on the flow (see Section 4 of [13] for more details about flow boundary layers). In the transition regime, there is a mix of both free path DSMC particles as well as sufficient collisional frequency to preserve continuum like trends in the data, but depending on the Knudsen Number, these statistical fluctuations keep continuum models from being accurate. The different fluid flow models in terms of their flow regimes are described in Figure 2.
+With an understanding of the 2 extreme cases presented in the section about the [Knudsen Number](#knudsen-number), understanding can be extended into the slip flow and transition regimes shown in Figure 1. In the molecular regime, the intuition formed in case 1 fully applies, and in the continuum regime, the intuition formed in case 2 fully applies. The continuum regime will not be discussed further, but more information is available in the following set of notes [3]. In the slip flow regime, the internal flow can be thought of as the same as in continuum flow, but on the edges there may be different phenomena based on the imposition of boundary conditions on the flow (see Section 4 of [4] for more details about flow boundary layers). In the transition regime, there is a mix of both free path DSMC particles as well as sufficient collisional frequency to preserve continuum like trends in the data, but depending on the Knudsen Number, these statistical fluctuations keep continuum models from being accurate. The different fluid flow models in terms of their flow regimes are described in Figure 2.
 
 <div style="text-align: center;">
     <img src="/assets/images/undergraduate_thesis/comp_methods_regimes.png" style="width:80%;" alt="flow_regimes">
-    <figcaption>Figure 2: Continuum mechanics simulation types classified based on the Knudsen Number regimes over which they provide accurate numerical results [14].</figcaption>
+    <figcaption>Figure 2: Continuum mechanics simulation types classified based on the Knudsen Number regimes over which they provide accurate numerical results [5].</figcaption>
 </div>
 
-From Figure 2 (see [14] for further detail), we can see that the continuum models for a fluid
+From Figure 2 (see [5] for further detail), we can see that the continuum models for a fluid
 flow are valid until the beginning of the transitional flow regime, but after that the end of the Burnett Hydrodynamics Equations, there is no closed set of equations that can describe the flow of a fluid. When considering molecular models however, there is no Knudsen Number range in which they do not provide accurate solutions. This is because they are simulating the fundamental physical interactions that govern macroscopic properties of interest in continuum simulations (see case 2 in the [Knudsen Numer](#knudsen-number) section for an example). This means that for a simulation that begins with part of the domain having a Knudsen Number of $Kn < 0.001$, and another part of the domain having a Knudsen Number of $Kn → ∞$, and a final Knudsen number of $Kn > 0.1$, then modelling the entire domain using a molecular model that accounts for collisions (such as a Boltzmann or DSMC model) is perfectly valid. The flow regimes for the specific gas filling process that General Fusion is interested in are analyzed on the main page relating to this [Undergradaute Thesis](/fusion/undergrad_thesis/#preliminary-calculations-and-verification).
 
 
 # Direct Simulation Monte Carlo (DSMC)
 
 Direct Simulation Monte Carlo (DSMC) is a method for simulating molecular dynamics in fluids
-of all Knudsen Number regimes, but is largely used for highly rarefied flows [15].
+of all Knudsen Number regimes, but is largely used for highly rarefied flows [6].
 
 ## Key Assumptions of DSMC
 
 The following four assumptions about the physical characteristics of the system are utilized in
-DSMC [15].
+DSMC [6].
 
-1. Molecules move without interaction in free flight for the length of the chosen time step [15].
-2. Impact parameters and initial orientations of colliding particles are random [15].
-3. In every cubic mean free path there are many molecules, but only a small fraction need to be simulated for the molecular description of the flow to be accurate [15].
+1. Molecules move without interaction in free flight for the length of the chosen time step [6].
+2. Impact parameters and initial orientations of colliding particles are random [6].
+3. In every cubic mean free path there are many molecules, but only a small fraction need to be simulated for the molecular description of the flow to be accurate [6].
 4. The only molecules that any molecule could collide with are the molecules within a molecule’s finishing cell.
 
 For dilute gases, all four assumptions can be made so they are very accurate with the right parameters. This makes it so the DSMC method produces accurate simulations of macroscopic non- equilibrium flow fields. For dilute gases, there is always a time step which allows assumption 1 to be true regardless of Knudsen Number; Assumption 2 is true provided there is sufficient molecular spacing; assumption 3 is the true foundation of DSMC when compared to Collisional Boltzmann, and can be achieved using a number of different computational methods described later on in this section; and assumption 4 can always be made true with a sufficiently small time step just like assumption 1.
@@ -100,7 +100,7 @@ The way DSMC differs from other molecular dynamics simulations is by not simulat
 
 ## Why Do Molecules Need to Stay in Their Cells for Multiple Time Steps
 
-The fourth assumption (from the section on the [Key Assumptions of DSMC](#key-assumptions-of-dsmc)) does not appear in [15], but it is important for the specific case of a transient gas filling simulation, which is the core problem of this thesis. In a gas filling process from an inlet, as gas fills the chamber there will be a bias to the faster end of the velocity distribution (shown in Figure 3).
+The fourth assumption (from the section on the [Key Assumptions of DSMC](#key-assumptions-of-dsmc)) does not appear in [6], but it is important for the specific case of a transient gas filling simulation, which is the core problem of this thesis. In a gas filling process from an inlet, as gas fills the chamber there will be a bias to the faster end of the velocity distribution (shown in Figure 3).
 
 <div style="text-align: center;">
     <img src="/assets/images/undergraduate_thesis/mb_speed_parametrized.png" style="width:70%;" alt="mb_speed_parametrized">
@@ -113,7 +113,7 @@ $$
 \Gamma=\frac{1}{4}nc_{gas} \; . \quad (3)
 $$
 
-In Equation (3), $n$ is the number density of the gas in $[molecules/m3]$, and $c_{gas}$ is the average velocity of the gas inflow in $[m/s]$. The equation for cgas can be derived from the Boltzmann Distribution, and it is
+In equation (3), $n$ is the number density of the gas in $[molecules/m3]$, and $c_{gas}$ is the average velocity of the gas inflow in $[m/s]$. The equation for cgas can be derived from the Boltzmann Distribution, and it is
 
 $$
 c_{gas}=\left( \frac{8kT}{m\pi}\right)^\frac{1}{2} \;. \quad (4)
@@ -144,11 +144,11 @@ $$
 
 At each time step, the following list of steps occur in the specified order.
 
-1. Generate particles at inflow boundaries (or through imposition of initial conditions at $t = 0$) [15].
-2. Move all particles in straight lines along their molecular velocity vectors for a time step less than the local mean collision time [15].
-3. Apply Boundary Conditions to particles where it is appropriate (wall collisions and particle deletions) [15].
-4. Perform stochastic collisions within each cell, assuming parameters for each collision pair to be random [15].
-5. Sample particle properties in each cell [15].
+1. Generate particles at inflow boundaries (or through imposition of initial conditions at $t = 0$) [6].
+2. Move all particles in straight lines along their molecular velocity vectors for a time step less than the local mean collision time [6].
+3. Apply Boundary Conditions to particles where it is appropriate (wall collisions and particle deletions) [6].
+4. Perform stochastic collisions within each cell, assuming parameters for each collision pair to be random [6].
+5. Sample particle properties in each cell [6].
 
 #### Particle Generation
 
@@ -160,7 +160,7 @@ $$
 f(\vec{v}) \equiv \left[ \frac{2\pi k T}{m} \right]^{-\frac{3}{2}} exp \left( -\frac{1}{2}\frac{m\vec{v}^2}{kT} \right) \; . \quad (6)
 $$
 
-The modified distribution mentioned in the previous paragraph takes the velocity $\vec{v}$ from Equation (6) and then adds it to $\vec{v}_{bias}$ to define a particle velocity
+The modified distribution mentioned in the previous paragraph takes the velocity $\vec{v}$ from equation (6) and then adds it to $\vec{v}_{bias}$ to define a particle velocity
 
 $$
 \vec{v}_{particle} = \vec{v}+\vec{v}_{bias} \; . \quad (7)
@@ -189,31 +189,45 @@ After this movement of particles, the set of positions $\vec{x}(tf)$ of the part
 #### Boundary Conditions
 
 Now that particles have been moved to their final positions, boundary conditions need to be
-imposed on the particles that have left the domain. The main two boundary conditions that will be used throughout this thesis are wall boundary conditions and deletion boundary conditions. Particles that have left the domain and would have collided with the wall are brought back to the point of contact, and then collide with the wall in whichever way is specified by the boundary (see [16] for some examples). If a particle that has left the domain would have collided with a deletion patch, then the particle is removed from the state of the simulation so it is not a part of the simulation at the beginning of the next time step. Now only the particles that are actually entering the next time step of the simulation remain as a part of the saved state.
+imposed on the particles that have left the domain. The main two boundary conditions that will be used throughout this thesis are wall boundary conditions and deletion boundary conditions. Particles that have left the domain and would have collided with the wall are brought back to the point of contact, and then collide with the wall in whichever way is specified by the boundary (see [7] for some examples). If a particle that has left the domain would have collided with a deletion patch, then the particle is removed from the state of the simulation so it is not a part of the simulation at the beginning of the next time step. Now only the particles that are actually entering the next time step of the simulation remain as a part of the saved state.
 
 #### Stochastic Collisions
 
 In a gas composed of hard sphere molecules of diameter d (twice the total atomic radius of each
-molecule), the probability that two molecules both located within a volume of gas $V$ (the volume of the cell in which both molecules are contained) collide is proportional to the total volume swept out by their interaction cross sections normalized by the volume of gas being considered [15]. This is shown by the equation
+molecule), the probability that two molecules both located within a volume of gas $V$ (the volume of the cell in which both molecules are contained) collide is proportional to the total volume swept out by their interaction cross sections normalized by the volume of gas being considered [6]. This is shown by the equation
 
 $$
 P \propto \pi d^2 v_{rel} \Delta t / V \;. \quad(10)
 $$
 
-The concept of volume swept out by an interaction cross section [15] can be visualized in Figure 6.
+The concept of volume swept out by an interaction cross section [6] can be visualized in Figure 6.
 
 <div style="text-align: center;">
     <img src="/assets/images/undergraduate_thesis/cross_section_volume_swept.png" style="width:70%;" alt="cross_section_volume_swept">
     <figcaption>Figure 6: Diagram showing how the interaction cross section sweep over time can be represented by a volume element.</figcaption>
 </div>
 
-In Figure 6, the total volume swept out by the interaction cross sections of the two molecules is simplified to the case where one of the two molecules is at rest [15]. This is always able to be the case for any two molecules by choosing $\vec{v}_{particle} = \vec{v}_{rel}$ as the  velocity of one of the molecules, so then the other is always at rest in that reference frame. Then the interaction cross section forms the area that is traced along the path length of the moving molecule, forming a cylinder. This can be used to understand Equation (10).
+In Figure 6, the total volume swept out by the interaction cross sections of the two molecules is simplified to the case where one of the two molecules is at rest [6]. This is always able to be the case for any two molecules by choosing $\vec{v}_{particle} = \vec{v}_{rel}$ as the  velocity of one of the molecules, so then the other is always at rest in that reference frame. Then the interaction cross section forms the area that is traced along the path length of the moving molecule, forming a cylinder. This can be used to understand equation (10).
 
+In equation (10), it is defined that for two molecules that exist within a volume element $V$, the total interaction volume is the volume of the interaction cylinder presented in the previous paragraph, so the ratio of these two areas is the interaction probability of any two real particles. However, in DSMC, each DSMC Particle represents a large number ($W_p$) of real particles which all have the same velocity and molecular properties as the DSMC particle [6]. This allows us to find the probability of a DSMC interaction by adding a factor of ($W_p$) to equation (10) to form 
 
-***CONTINUE HERE***
+$$
+P_{DSMC} = \pi d^2 W_p v_{rel} \Delta t_{DSMC} / V_{DSMC} \;. \quad (11)
+$$
 
+Then since in each cell there are $N_p(N_p − 1)/2$ possible particle pairings, $P_{DSMC}$ from equation (11) should be multiplied by all possible particle pairings to find the total number of collisions that occur in a cell
 
-In Equation (10), it is defined that two molecules both exist within a volume element $V$, then their total interaction volume is the volume of the interaction cylinder presented in the previous paragraph, so the ratio of these two areas is the interaction probability of any two real particles. However, in DSMC, each DSMC Particle represents a large number (Wp) of real particles which all have the same velocity and molecular properties as the DSMC particle [15]. This allows us to find the probability of a DSMC interaction by adding a factor of (Wp) to Equation 3.10.
+$$
+N_{coll} = \frac{1}{2}N_p(N_p - 1)\frac{\pi d^2 W_p \langle v_{rel}\rangle \Delta t_{DSMC}}{V_{DSMC}} \;. \quad (12)
+$$
+
+Now collisions between the representative particles can be simulated since equation (12) shows how many would be expected to occur, and these collisions determine the velocity states of the particles. Now we have the full velocity state of the particles, as well as the internal molecular states if those are a part of the simulation.
+
+At this point, there are further pieces of mathematics that are used to increase the computational efficiency of the code, but this contains the main physical intuition required to understand the work done in this thesis. If the specifics are of interest, Section 6.2.3 of [6] is a great resource to begin with.
+
+#### Sampling Cell Properties
+
+Although DSMC simulations are molecular in nature, often the properties of interest are macroscopic, as they are in the case of this thesis. This means at each time step, the particles can be analyzed to give macroscopic properties in each cell (such as the number density in each cell) should they be desired to be saved for further analysis.
 
 
 # Existing Open Source DSMC Packages
@@ -222,39 +236,39 @@ This section outlines various modern DSMC packages that have been designed for c
 
 ## Graeme Bird
 
-**1963-2013** [17]: [Graeme Bird Website](http://www.gab.com.au/)
+**1963-2013** [8]: [Graeme Bird Website](http://www.gab.com.au/)
 
 Graeme Bird proposed and developed the DSMC method, and continued to be at the forefront
-of the field until he retired in 2013 at the age of 88 [17]. His software is very user friendly, but I’ve found that the open source versions of his software are more designed for demonstrating innovations in DSMC (such as new collisional models) than solving different problems with existing tools. The trade off for these user friendly options is that the source code is unavailable, so new features cannot be added by users
+of the field until he retired in 2013 at the age of 88 [8]. His software is very user friendly, but I’ve found that the open source versions of his software are more designed for demonstrating innovations in DSMC (such as new collisional models) than solving different problems with existing tools. The trade off for these user friendly options is that the source code is unavailable, so new features cannot be added by users
 
 ## OpenFOAM
 
-**2009-present** [18]: [OpenFOAM Website](https://www.openfoam.com/)
+**2009-present** [9]: [OpenFOAM Website](https://www.openfoam.com/)
 
-OpenFOAM is a free open source CFD software package developed by OpenCFD for use in many different areas of engineering and science [19]. Development began in 2004, but the DSMC package was first available in 2009. The biggest strength of OpenFOAM is strict coding practices and the dictionary and class structure for specifying program parameters. This (along with the source code being open source) allows for OpenFOAM users to add their own features.
+OpenFOAM is a free open source CFD software package developed by OpenCFD for use in many different areas of engineering and science [10]. Development began in 2004, but the DSMC package was first available in 2009. The biggest strength of OpenFOAM is strict coding practices and the dictionary and class structure for specifying program parameters. This (along with the source code being open source) allows for OpenFOAM users to add their own features.
 
 ## hyStrath
 
-**2014-present** [20]: [hyStrath Website](https://hystrath.github.io/)
+**2014-present** [11]: [hyStrath Website](https://hystrath.github.io/)
 
-The GitHub repository [hyStrath](https://github.com/hystrath/hyStrath) is an OpenFOAM extension that features hypersonic and rarefied gas dynamics code [20]. The code is specifically designed for atmospheric re-entry analysis, but is suitable for all kinds of rarefied gas dynamics problems, and has a module called dsmcFoam+ which is an extension of OpenFOAM’s DSMC software. It is also built within the OpenFOAM framework and strictly adheres to OpenFOAM’s coding practices, so it is easy to expand their existing code base to add additional features.
+The GitHub repository [hyStrath](https://github.com/hystrath/hyStrath) is an OpenFOAM extension that features hypersonic and rarefied gas dynamics code [11]. The code is specifically designed for atmospheric re-entry analysis, but is suitable for all kinds of rarefied gas dynamics problems, and has a module called dsmcFoam+ which is an extension of OpenFOAM’s DSMC software. It is also built within the OpenFOAM framework and strictly adheres to OpenFOAM’s coding practices, so it is easy to expand their existing code base to add additional features.
 
 ## SPARTA
 
-**2014-present** [21]: [SPARTA Website](https://sparta.github.io/)
+**2014-present** [12]: [SPARTA Website](https://sparta.github.io/)
 
-SPARTA is an acronym for Stochastic PArallel Rarefied-gas Time-accurate Analyzer [21]. It is a parallel DSMC code for low density 2-D or 3-D gas simulations created at the Sandia National Laboratory in the United States [21]. The source code is available, but the coding practices aren’t standardized, and there is limited documentation.
+SPARTA is an acronym for Stochastic PArallel Rarefied-gas Time-accurate Analyzer [12]. It is a parallel DSMC code for low density 2-D or 3-D gas simulations created at the Sandia National Laboratory in the United States [12]. The source code is available, but the coding practices aren’t standardized, and there is limited documentation.
 
 ## Starfish
 
-**2016-present** [22]: [Starfish Website](https://www.particleincell.com/starfish/)
+**2016-present** [13]: [Starfish Website](https://www.particleincell.com/starfish/)
 
-Starfish is a 2-D gas and plasma simulation code [22] developed by Particle In Cell Consulting(PIC-C). For modelling plasma, it uses the Electrostatic Particle in Cell method; and for modelling free molecular flow it can use several continuum solvers as well as DSMC. There are two versions. One is free and open source but contains limited features, and the other is only internally available within PIC-C, but can be requested in a compiled format.
+Starfish is a 2-D gas and plasma simulation code [13] developed by Particle In Cell Consulting(PIC-C). For modelling plasma, it uses the Electrostatic Particle in Cell method; and for modelling free molecular flow it can use several continuum solvers as well as DSMC. There are two versions. One is free and open source but contains limited features, and the other is only internally available within PIC-C, but can be requested in a compiled format.
 
 
 # Comparison of Existing Open Source DSMC Codes
 
-The DSMC codes were evaluated in a simple comparison matrix which is shown in Table 1. The results of this comparison matrix were evaluated holistically through a series of discussions with the supervisor of this thesis at General Fusion, Abetheran Antony. The evaluation was centred around what would be the best way for General Fusion to get as much information as possible out of the thesis while also prioritizing my learning and educational development. We decided on hyStrath because it has a great list of features and has been thoroughly verified in academic papers [23].
+The DSMC codes were evaluated in a simple comparison matrix which is shown in Table 1. The results of this comparison matrix were evaluated holistically through a series of discussions with the supervisor of this thesis at General Fusion, Abetheran Antony. The evaluation was centred around what would be the best way for General Fusion to get as much information as possible out of the thesis while also prioritizing my learning and educational development. We decided on hyStrath because it has a great list of features and has been thoroughly verified in academic papers [14].
 
 
 **Table 1: Comparison matrix for evaluation of different Open Source DSMC codes.**
@@ -269,5 +283,32 @@ The DSMC codes were evaluated in a simple comparison matrix which is shown in Ta
 | Supporting Literature /10            | 10       | 7            | 7            | 6          | 5            |
 
 
-
 # References
+
+[1] *Encyclopedia Britannica*, "Mean Free Path." [Online]. Available: https://www.britannica.com/science/mean-free-path
+
+[2] N. Dongari, A. Sharma, and F. Durst, "Pressure-driven diffusive gas flows in micro-channels: From the Knudsen to the continuum regimes," *Microfluid. Nanofluid.*, vol. 6, no. 5, pp. 679–692, 2008, doi: 10.1007/s10404-008-0344-y.
+
+[3] I. J. Hewitt, *Continuum Mechanics*. [Online]. Available: https://people.maths.ox.ac.uk/hewitt/publications/hewitt_karthaus_continuum_notes.pdf
+
+[4] C. Terquem, *Fluids*. [Online]. Available: https://www.physics.ox.ac.uk/system/files/file_attachments/notes.pdf
+
+[5] I. B. Sebastião, M. Kulakhmetov, and A. Alexeenko, "Comparison between phenomenological and ab-initio reaction and relaxation models in DSMC," *AIP Conf. Proc.*, 2016, doi: 10.1063/1.4967656.
+
+[6] I. D. Boyd and T. E. Schwartzentruber, "6 - Direct Simulation Monte Carlo," in *Nonequilibrium Gas Dynamics and Molecular Simulation*, Cambridge University Press, 2017, pp. 183–251.
+
+[7] OpenFOAM, "Standard Boundary Conditions - User Guide." [Online]. Available: https://www.openfoam.com/documentation/user-guide/a-reference/a.4-standard-boundary-conditions
+
+[8] G. A. Bird, *The DSMC Method: Version 1.2*, Createspace, 2013.
+
+[9] C. Greenshields, "OpenFOAM 1.6 Released," *OpenFOAM*, Apr. 2023. [Online]. Available: https://openfoam.org/release/1-6/
+
+[10] OpenFOAM, "Official Website." [Online]. Available: https://www.openfoam.com/
+
+[11] hyStrath, "Hystrath Project." [Online]. Available: https://hystrath.github.io/
+
+[12] S. Plimpton, "Sparta Direct Simulation Monte Carlo Simulator." [Online]. Available: https://sparta.github.io/
+
+[13] Particle In Cell, "Starfish Simulation Tool." [Online]. Available: https://www.particleincell.com/starfish/
+
+[14] C. White *et al.*, "DsmcFoam+: An OpenFOAM based direct simulation Monte Carlo Solver," *Comput. Phys. Commun.*, vol. 224, pp. 22–43, 2018, doi: 10.1016/j.cpc.2017.09.030.

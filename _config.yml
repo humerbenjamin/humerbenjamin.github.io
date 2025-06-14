@@ -110,9 +110,9 @@ author:
   location         : "Vancouver, British Columbia"
   # email            : "benjamin.humer@mail.utoronto.ca"
   links:
-    - label: "Email"
+    - label: "Contact"
       icon: "fas fa-fw fa-envelope-square"
-      url: "benjamin.humer@mail.utoronto.ca"
+      url: "contact"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -132,9 +132,9 @@ author:
 # Site Footer
 footer:
   links:
-    - label: "Email"
+    - label: "Contact"
       icon: "fas fa-fw fa-envelope-square"
-      url: "benjamin.humer@mail.utoronto.ca"
+      url: "contact"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: https://github.com/humerbenjamin

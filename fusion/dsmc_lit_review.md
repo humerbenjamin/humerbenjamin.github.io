@@ -32,8 +32,7 @@ Theory and background information is presented for technical readers who are not
 
 ## Knudsen Number
 
-Many key question associated with this thesis revolve around why DSMC is well suited for
-tackling this specific type of gas dynamics problem, and the foundation of this discussion depends on an understanding of flow regimes. The flow regimes covered by present theory are often classified by their Knudsen Number. The Knudsen Number is a dimensionless number defined as the ratio of the molecular mean free path to the representative physical length scale 
+Many key questions associated with this thesis revolve around why DSMC is well suited for tackling this specific type of gas dynamics problem, and the foundation of this discussion depends on an understanding of flow regimes. The flow regimes covered by present theory are often classified by their Knudsen Number. The Knudsen Number is a dimensionless number defined as the ratio of the molecular mean free path to the representative physical length scale 
 
 $$
 Kn=\lambda/L \; . \quad (1)
@@ -47,7 +46,7 @@ Where $λ$ is the molecular mean free path (see [1] for a basic definition) in t
 
 In case 1, statistical fluctuations will be dominant for a fine resolution hexahedral grid (where $V \approx L^3$ for the grid). This is because within each cell, there will be no collisions, resulting in free diffusion based on the statistical profile of the gas in each cell.
 
-In case 2, the cancellation of statistical fluctuations leads to the functions describing the gas at different points in space being continuous. Consider an example function such as T(⃗r, t) representing the temperature of a fluid at various points in space ⃗r at times t. For an infinitely collisional gas, properties of the gas in two infinitesimally nearby locations are going to be the same, since they will exchange energy and momentum through their frequent collisions. This leads to the equality 
+In case 2, the cancellation of statistical fluctuations leads to the functions describing the gas at different points in space being continuous. Consider an example function such as $T(\vec{r},t)$ representing the temperature of a fluid at various points in space $\vec{r}$ at times $t$. For an infinitely collisional gas, properties of the gas in two infinitesimally nearby locations are going to be the same, since they will exchange energy and momentum through their frequent collisions. This leads to the equality 
 
 $$
 T(\vec{r},t) = \lim_{d\vec{x} \to 0} T(\vec{r} \pm d\vec{x},t) \; . \quad(2)

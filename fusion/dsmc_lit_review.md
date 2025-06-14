@@ -135,7 +135,7 @@ In Figure 5, a particle moves along the entirety of $\vec{d}$ in one time step. 
 
 ## The DSMC Algorithm
 
-In a DSMC program, the program runs in a loop from initial time ti to final time tf in N time steps of length $∆t$ specified by the equation
+In a DSMC program, the program runs in a loop from initial time $t_{\mathrm{i}}$ to final time $t_{\mathrm{f}}$ in $$N$ time steps of length $\Deltat$ specified by the equation
 
 $$
 \Delta t = \frac{t_f-t_i}{N} \;. \quad (5)
@@ -151,9 +151,7 @@ At each time step, the following list of steps occur in the specified order.
 
 #### Particle Generation
 
-At the beginning of each time step, particles are generated at any inflow patches. They are
-randomly assigned parameters, usually based on a modified Maxwell Boltzmann Distribution pa-
-rameterized based on Temperature, and often include the ability to manually bias the mean velocity by some $\vec{v}_{bias}$. The Maxwell Boltzmann distribution for 3-dimensional velocity is defined as
+At the beginning of each time step, particles are generated at any inflow patches. They are randomly assigned parameters, usually based on a modified Maxwell Boltzmann Distribution parameterized based on Temperature, and often include the ability to manually bias the mean velocity by some $\vec{v}_{bias}$. The Maxwell Boltzmann distribution for 3-dimensional velocity is defined as
 
 $$
 f(\vec{v}) \equiv \left[ \frac{2\pi k T}{m} \right]^{-\frac{3}{2}} exp \left( -\frac{1}{2}\frac{m\vec{v}^2}{kT} \right) \; . \quad (6)
@@ -167,11 +165,9 @@ $$
 
 #### Particle Movement
 
-Particles created at the inflow patch were randomly assigned a position⃗x (ti) somewhere on the
-face of the inflow patch in the previous step; and particles that were already part of the simulation for the previous time step have positions $\vec{x}(ti)$ which were saved to represent the system state after the previous time step.
+Particles created at the inflow patch were randomly assigned a position $\vec{x}(t_{\mathrm{i}})$ somewhere on the face of the inflow patch in the previous step; particles that were already part of the simulation for the previous time step have positions $\vec{x}(t_\mathrm{i})$ which were saved to represent the system state after the previous time step.
 
-At every time step, all particles (both created at the inflow patch and existing in the domain)
-are moved by a distance $d$ along $\vec{v}(t_i)$
+At every time step, all particles (both created at the inflow patch and existing in the domain) are moved by a distance $d$ along $\vec{v}(t_i)$
 
 $$
 \vec{d}=\vec{v}(t_i)\cdot \Delta t \;. \quad (8)
@@ -192,11 +188,10 @@ imposed on the particles that have left the domain. The main two boundary condit
 
 #### Stochastic Collisions
 
-In a gas composed of hard sphere molecules of diameter d (twice the total atomic radius of each
-molecule), the probability that two molecules both located within a volume of gas $V$ (the volume of the cell in which both molecules are contained) collide is proportional to the total volume swept out by their interaction cross sections normalized by the volume of gas being considered [6]. This is shown by the equation
+In a gas composed of hard sphere molecules of diameter $d$ (twice the total atomic radius of each molecule), the probability that two molecules both located within a volume of gas $V$ (the volume of the cell in which both molecules are contained) collide is proportional to the total volume swept out by their interaction cross sections normalized by the volume of gas being considered [6]. This is shown by the equation
 
 $$
-P \propto \pi d^2 v_{rel} \Delta t / V \;. \quad(10)
+P \propto \pi d^2 v_{\mathrm{rel}} \Delta t / V \;. \quad(10)
 $$
 
 The concept of volume swept out by an interaction cross section [6] can be visualized in Figure 6.
@@ -206,7 +201,7 @@ The concept of volume swept out by an interaction cross section [6] can be visua
     <figcaption>Figure 6: Diagram showing how the interaction cross section sweep over time can be represented by a volume element.</figcaption>
 </div>
 
-In Figure 6, the total volume swept out by the interaction cross sections of the two molecules is simplified to the case where one of the two molecules is at rest [6]. This is always able to be the case for any two molecules by choosing $\vec{v}_{particle} = \vec{v}_{rel}$ as the  velocity of one of the molecules, so then the other is always at rest in that reference frame. Then the interaction cross section forms the area that is traced along the path length of the moving molecule, forming a cylinder. This can be used to understand equation (10).
+In Figure 6, the total volume swept out by the interaction cross sections of the two molecules is simplified to the case where one of the two molecules is at rest [6]. This is always able to be the case for any two molecules by choosing $v_{\mathrm{particle}} = v_{\mathrm{rel}}$ as the  velocity of one of the molecules, so then the other is always at rest in that reference frame. Then the interaction cross section forms the area that is traced along the path length of the moving molecule, forming a cylinder. This can be used to understand equation (10).
 
 In equation (10), it is defined that for two molecules that exist within a volume element $V$, the total interaction volume is the volume of the interaction cylinder presented in the previous paragraph, so the ratio of these two areas is the interaction probability of any two real particles. However, in DSMC, each DSMC Particle represents a large number ($W_p$) of real particles which all have the same velocity and molecular properties as the DSMC particle [6]. This allows us to find the probability of a DSMC interaction by adding a factor of ($W_p$) to equation (10) to form 
 

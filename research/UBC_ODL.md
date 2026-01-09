@@ -8,11 +8,9 @@ classes: wide
 
 --------------------------------
 
-# Summary
-
 # Specific Skills Used
 
-Programming (python, matlab, ), Data Analysis, Hardware Testing, Oceanography
+Programming (Python, MATLAB), Data Analysis, Hardware Testing, Oceanography
 
 # Summary
 

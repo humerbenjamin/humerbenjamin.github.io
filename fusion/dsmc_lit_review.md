@@ -135,7 +135,7 @@ In Figure 5, a particle moves along the entirety of $\vec{d}$ in one time step. 
 
 ## The DSMC Algorithm
 
-In a DSMC program, the program runs in a loop from initial time $t_{\mathrm{i}}$ to final time $t_{\mathrm{f}}$ in $$N$ time steps of length $\Deltat$ specified by the equation
+In a DSMC program, the program runs in a loop from initial time $t_{\mathrm{i}}$ to final time $t_{\mathrm{f}}$ in $N$ time steps of length $\Delta t$ specified by the equation
 
 $$
 \Delta t = \frac{t_f-t_i}{N} \;. \quad (5)

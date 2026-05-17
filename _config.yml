@@ -106,13 +106,13 @@ analytics:
 author:
   name             : "Benjamin Humer"
   avatar           : "/assets/images/headshot.png"
-  bio              : "Engineering Physicist"
-  location         : "Vancouver, British Columbia"
+  bio              : "MASc Student at the University of Toronto"
+  location         : "Toronto, Ontario"
   # email            : "benjamin.humer@mail.utoronto.ca"
   links:
     - label: "Contact"
       icon: "fas fa-fw fa-envelope-square"
-      url: "contact"
+      url: "/contact"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"

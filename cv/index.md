@@ -7,7 +7,7 @@ classes: wide
 
 --------------------------------
 
-<a href="/cv/humerben_UTIAS_cv.pdf" target="_blank"><i>Investigation of X-ray Crashes in a Transient Coaxial Helicity Injected Spherical Tokamak</i></a>
+<a href="/cv/humerben_UTIAS_cv.pdf" target="_blank"><i>Downloadable CV</i></a>
 
 <iframe
   src="/cv/humerben_UTIAS_cv.pdf"

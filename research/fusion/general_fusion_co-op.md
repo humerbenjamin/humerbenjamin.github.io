@@ -20,14 +20,22 @@ Plasma Physics, Programming (Python, C++), Simulation (OpenFOAM, MHD Simulation)
 
 # Summary
 
-I spent my time in UofT's [PEY Co-op Program](https://discover.engineering.utoronto.ca/experiential-learning/professional-experience-year-pey/) working at [General Fusion](https://generalfusion.com/) for 16 months from May 2024 to August 2025. As an Engineering Physics student, this was a phenomenal opportunity to work on Plasma Physics, and explore an industrial research environment. I worked primarily on MHD stability, first using experimental data to determine the physical mechanisms leading to X-ray crashes
+I spent my time in UofT's [PEY Co-op Program](https://discover.engineering.utoronto.ca/experiential-learning/professional-experience-year-pey/) working at [General Fusion](https://generalfusion.com/) for 16 months from May 2024 to August 2025. As an Engineering Physics student, this was a phenomenal opportunity to work on Plasma Physics, and explore an industrial research environment. I worked primarily on MHD stability, first using experimental data to determine the physical mechanisms leading to X-ray crashes and later expanding the work to include MHD simulations.
 
 
 # Specific Work and Individual Contribution
 
 
 
-## 
+## Culham Plasma Physics Summer School
+
+<iframe
+  src="/research/fusion/AXUV_Crash_Analysis_UKAEA_Poster_2025-07-02_Final_Print.pdf"
+  width="100%"
+  height="600px"
+  style="border:3px solid #ccc;"
+>
+</iframe>
 
 
 

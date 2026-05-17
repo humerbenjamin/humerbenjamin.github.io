@@ -4,12 +4,13 @@ main:
     url: https://humerbenjamin.github.io/
   - title: "CV"
     url: https://humerbenjamin.github.io/cv/
-  - title: "Fusion"
-    url: https://humerbenjamin.github.io/fusion/
-  - title: "Research"
+  - title: "Research and Work Experience"
     url: https://humerbenjamin.github.io/research/
-  - title: "Projects"
-    url: https://humerbenjamin.github.io/projects/
+
+  # - title: "Fusion"
+  #   url: https://humerbenjamin.github.io/fusion/
+  # - title: "Projects"
+  #   url: https://humerbenjamin.github.io/projects/
 
 
   # - title: "About"

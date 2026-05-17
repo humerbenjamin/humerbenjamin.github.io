@@ -11,9 +11,7 @@ classes: wide
 - [About Me](#about-me)
 - [Summary of Website Sections](#summary-of-website-sections)
     - [CV](#cv)
-    - [Fusion](#fusion)
-    - [Research](#research)
-    - [Projects](#projects)
+    - [Research and Work Experience](#research)
 
 
 # About Me
@@ -31,19 +29,9 @@ The following list highlights the main sections of this website and what is cont
 
 ## [CV](https://humerbenjamin.github.io/cv/)
 
-This page includes an extended CV as well as a download link for a PDF version of my CV.
+This page includes an extended CV as well as a download link for a PDF version of that CV.
 
 
-## [Fusion](https://humerbenjamin.github.io/fusion/)
-
-Fusion energy is the area that I would like to pursue for my career in academia or industry, so these experiences are especially relevant to my personal development. This page highlights the fusion specific experiences I have had throughout my career so far.
-
-
-## [Research](https://humerbenjamin.github.io/research/)
+## [Research and Work Experience](https://humerbenjamin.github.io/research/)
 
 Participating in summer research, thesis research, and work at a research company has been a key part of my educational experience as an aspiring researcher. This page specifically includes research experiences and projects that I have had outside of class time throughout my education.
-
-
-## [Projects](https://humerbenjamin.github.io/projects/)
-
-I have always enjoyed tackling longer projects. This page summarizes the thesis, summer research, personal, and school projects that I have completed, and provides links to more detailed descriptions.

@@ -9,8 +9,17 @@ classes: wide
 
 # Table of Contents
 
+<iframe
+  src="humerben_UTIAS_cv.pdf"
+  width="100%"
+  height="600px"
+  style="border:1px solid #ccc;"
+>
+</iframe>
 
 # Education
+
+
 
 ## BASc in Engineering Science (September 2020 - Present)
 University of Toronto (Toronto, ON.)
